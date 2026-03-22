@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraPK | Premium Perfume Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="perfume-bottle"></div>
+            <p>Loading Excellence...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-spray-can"></i>
+                <span>Aura<span>PK</span></span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#collections" class="nav-link">Collections</a></li>
+                <li><a href="mens.html" class="nav-link">Men's</a></li>
+                <li><a href="womens.html" class="nav-link">Women's</a></li>
+                <li><a href="unisex.html" class="nav-link">Unisex</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="cart.html" class="nav-link cart-icon"><i class="fas fa-shopping-cart"></i> <span id="cartCount">0</span></a></li>
+            </ul>
+            <div class="menu-overlay"></div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <span class="hero-subtitle animate-item">Premium Quality</span>
+            <h1 class="hero-title animate-item">Discover Your<br>Signature Scent</h1>
+            <p class="hero-description animate-item">Explore our exclusive collection of luxury fragrances crafted for those who appreciate elegance.</p>
+            <div class="hero-buttons animate-item">
+                <a href="#collections" class="btn btn-primary">Shop Now</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Free Shipping</h3>
+                    <p>On orders over $50</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>100% Authentic</h3>
+                    <p>Guaranteed genuine products</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated customer service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collections" class="collections">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-subtitle">Explore</span>
+                <h2 class="section-title">Our Collections</h2>
+                <p class="section-description">Discover our curated selection of premium fragrances</p>
+            </div>
+            <div class="collections-grid">
+                <div class="collection-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600" alt="Men's Collection">
+                    <div class="collection-overlay">
+                        <h3>Men's Collection</h3>
+                        <a href="mens.html" class="collection-link">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="collection-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=600" alt="Women's Collection">
+                    <div class="collection-overlay">
+                        <h3>Women's Collection</h3>
+                        <a href="womens.html" class="collection-link">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="collection-card collection-card-wide fade-in">
+                    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600" alt="Unisex Collection">
+                    <div class="collection-overlay">
+                        <h3>Unisex Collection</h3>
+                        <a href="unisex.html" class="collection-link">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="bestsellers" class="products">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-subtitle">Featured</span>
+                <h2 class="section-title">Bestselling Perfumes</h2>
+                <p class="section-description">Our most popular fragrances loved by customers</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Royal Oud">
+                        <div class="product-badge">Best Seller</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Royal Oud', 42000, 'A luxurious blend of oud, sandalwood, and amber. Perfect for evening wear.', 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Royal Oud</h3>
+                        <p class="product-notes">Oud, Sandalwood, Amber</p>
+                        <div class="product-price">
+                            <span class="price">Rs 42,000</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Royal Oud', 42000)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Royal Oud', 42000, 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400" alt="Aqua Essence">
+                        <div class="product-badge">New</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Aqua Essence', 25000, 'Fresh aquatic fragrance with citrus and marine notes. Perfect for summer.', 'https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Aqua Essence</h3>
+                        <p class="product-notes">Citrus, Marine, White Musk</p>
+                        <div class="product-price">
+                            <span class="price">Rs 25,000</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Aqua Essence', 25000)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Aqua Essence', 25000, 'https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400" alt="Velvet Rose">
+                        <div class="product-badge">Popular</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Velvet Rose', 33500, 'Romantic blend of rose, jasmine, and patchouli. Pure elegance.', 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Velvet Rose</h3>
+                        <p class="product-notes">Rose, Jasmine, Patchouli</p>
+                        <div class="product-price">
+                            <span class="price">Rs 33,500</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Velvet Rose', 33500)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Velvet Rose', 33500, 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400" alt="Midnight Velvet">
+                        <div class="product-badge">Premium</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Midnight Velvet', 56000, 'Deep oriental fragrance with vanilla, caramel, and musk. Intoxicating.', 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Midnight Velvet</h3>
+                        <p class="product-notes">Vanilla, Caramel, Musk</p>
+                        <div class="product-price">
+                            <span class="price">Rs 56,000</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Midnight Velvet', 56000)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Midnight Velvet', 56000, 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=400" alt="Citrus Bloom">
+                        <div class="product-badge">Fresh</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Citrus Bloom', 22000, 'Vibrant citrus notes with bergamot and lemon. Energizing scent.', 'https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Citrus Bloom</h3>
+                        <p class="product-notes">Bergamot, Lemon, Lime</p>
+                        <div class="product-price">
+                            <span class="price">Rs 22,000</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Citrus Bloom', 22000)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Citrus Bloom', 22000, 'https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=400" alt="Vanilla Sky">
+                        <div class="product-badge">Favorite</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Vanilla Sky', 28000, 'Sweet vanilla with creamy coconut and soft musk. Dreamy fragrance.', 'https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vanilla Sky</h3>
+                        <p class="product-notes">Vanilla, Coconut, Musk</p>
+                        <div class="product-price">
+                            <span class="price">Rs 28,000</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Vanilla Sky', 28000)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Vanilla Sky', 28000, 'https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content fade-in">
+                    <span class="section-subtitle">Our Story</span>
+                    <h2 class="section-title">Crafting Elegance Since 2020</h2>
+                    <p>At AuraPK, we believe that a scent is more than just a fragrance—it's a memory, an emotion, a statement.</p>
+                    <p>Our carefully curated collection features the finest perfumes from renowned manufacturers worldwide. Each bottle is a testament to the art of perfumery, crafted with passion and precision.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Premium Brands</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Authentic Products</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=600" alt="About Us">
+                    <div class="about-image-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-subtitle">Get in Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-description">Order directly via WhatsApp or reach out for inquiries</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Orders</h3>
+                    <p>Order directly and get instant confirmation</p>
+                    <a href="https://wa.me/923063159899" target="_blank" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>For inquiries and support</p>
+                    <a href="mailto:info@luxefragrances.com" class="btn-contact">
+                        info@luxefragrances.com
+                    </a>
+                </div>
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Our flagship store</p>
+                    <span class="contact-address">123 Fragrance Street, City</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Product">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription" class="modal-desc"></p>
+                    <p id="modalPrice" class="modal-price"></p>
+                    
+                    <!-- Size Selection -->
+                    <div class="size-selection">
+                        <label>Select Size:</label>
+                        <div class="size-options">
+                            <button class="size-btn active" data-size="30ml" data-price="0">30ml</button>
+                            <button class="size-btn" data-size="50ml" data-price="8400">50ml (+Rs 8,400)</button>
+                            <button class="size-btn" data-size="100ml" data-price="16800">100ml (+Rs 16,800)</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Quantity Selection -->
+                    <div class="quantity-selection">
+                        <label>Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="qty-btn" onclick="changeQty(-1)">-</button>
+                            <span id="modalQty">1</span>
+                            <button class="qty-btn" onclick="changeQty(1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <p id="modalTotal" class="modal-total"></p>
+                    <button id="modalOrderBtn" class="btn-order">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923063159899" class="float-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <i class="fas fa-spray-can"></i>
+                        <span>Aura<span>PK</span></span>
+                    </a>
+                    <p>Your destination for premium luxury fragrances.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#bestsellers">Bestsellers</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and new arrivals.</p>
+                    <form class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AuraPK. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

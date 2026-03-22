@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Collection | AuraPK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header-bg {
+            background: url('https://images.unsplash.com/photo-1541643600914-78b084683601?w=1920') center/cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="perfume-bottle"></div>
+            <p>Loading Excellence...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-spray-can"></i>
+                <span>Aura<span>PK</span></span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#collections" class="nav-link">Collections</a></li>
+                <li><a href="mens.html" class="nav-link">Men's</a></li>
+                <li><a href="#products" class="nav-link active">Women's</a></li>
+                <li><a href="unisex.html" class="nav-link">Unisex</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="cart.html" class="nav-link cart-icon"><i class="fas fa-shopping-cart"></i> <span id="cartCount">0</span></a></li>
+            </ul>
+            <div class="menu-overlay"></div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="page-header-content">
+            <h1 class="animate-item">Women's Collection</h1>
+            <p class="animate-item">Exquisite fragrances crafted for the elegant woman</p>
+            <div class="breadcrumb animate-item">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Women's Collection</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="floral">Floral</button>
+                <button class="filter-btn" data-filter="sweet">Sweet</button>
+                <button class="filter-btn" data-filter="fresh">Fresh</button>
+                <button class="filter-btn" data-filter="oriental">Oriental</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-subtitle">Exclusive</span>
+                <h2 class="section-title">Women's Fragrances</h2>
+                <p class="section-description">Discover our curated selection of premium women's perfumes</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card fade-in" data-category="floral">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Velvet Rose">
+                        <div class="product-badge">Best Seller</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Velvet Rose', 33500, 'Romantic blend of rose, jasmine, and patchouli. Pure elegance.', 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Velvet Rose</h3>
+                        <p class="product-notes">Rose, Jasmine, Patchouli</p>
+                        <div class="product-price">
+                            <span class="price">Rs 33,500</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Velvet Rose', 33500)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Velvet Rose', 33500, 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card fade-in" data-category="sweet">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400" alt="Vanilla Sky">
+                        <div class="product-badge">Popular</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Vanilla Sky', 28000, 'Sweet vanilla with creamy coconut and soft musk. Dreamy fragrance.', 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vanilla Sky</h3>
+                        <p class="product-notes">Vanilla, Coconut, Musk</p>
+                        <div class="product-price">
+                            <span class="price">Rs 28,000</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Vanilla Sky', 28000)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Vanilla Sky', 28000, 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card fade-in" data-category="floral">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Blossom Paradise">
+                        <div class="product-badge">New</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Blossom Paradise', 30800, 'Beautiful floral bouquet with lilies and tulips. Spring in a bottle.', 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Blossom Paradise</h3>
+                        <p class="product-notes">Lily, Tulip, Peony</p>
+                        <div class="product-price">
+                            <span class="price">Rs 30,800</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Blossom Paradise', 30800)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Blossom Paradise', 30800, 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card fade-in" data-category="fresh">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400" alt="Spring Breeze">
+                        <div class="product-badge">Fresh</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Spring Breeze', 22000, 'Light and refreshing with green tea and cucumber. Incredibly fresh.', 'https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Spring Breeze</h3>
+                        <p class="product-notes">Green Tea, Cucumber, Mint</p>
+                        <div class="product-price">
+                            <span class="price">Rs 22,000</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Spring Breeze', 22000)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Spring Breeze', 22000, 'https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card fade-in" data-category="oriental">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400" alt="Midnight Amber">
+                        <div class="product-badge">Luxury</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Midnight Amber', 44800, 'Sensual oriental blend with amber and benzoin. Perfect for evening.', 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Midnight Amber</h3>
+                        <p class="product-notes">Amber, Benzoin, Vanilla</p>
+                        <div class="product-price">
+                            <span class="price">Rs 44,800</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Midnight Amber', 44800)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Midnight Amber', 44800, 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card fade-in" data-category="sweet">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=400" alt="Pink Symphony">
+                        <div class="product-badge">Favorite</div>
+                        <div class="product-actions">
+                            <button class="quick-view" onclick="quickView('Pink Symphony', 25000, 'Delicious blend of strawberry and marshmallow. Sweet and playful.', 'https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=400')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pink Symphony</h3>
+                        <p class="product-notes">Strawberry, Marshmallow, Cotton Candy</p>
+                        <div class="product-price">
+                            <span class="price">Rs 25,000</span>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn-cart" onclick="addToCart('Pink Symphony', 25000)">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="btn-order-now" onclick="goToCheckout('Pink Symphony', 25000, 'https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=400')">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Product">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription" class="modal-desc"></p>
+                    <p id="modalPrice" class="modal-price"></p>
+                    
+                    <div class="size-selection">
+                        <label>Select Size:</label>
+                        <div class="size-options">
+                            <button class="size-btn active" data-size="30ml" data-price="0">30ml</button>
+                            <button class="size-btn" data-size="50ml" data-price="8400">50ml (+Rs 8,400)</button>
+                            <button class="size-btn" data-size="100ml" data-price="16800">100ml (+Rs 16,800)</button>
+                        </div>
+                    </div>
+                    
+                    <div class="quantity-selection">
+                        <label>Quantity:</label>
+                        <div class="quantity-controls">
+                            <button class="qty-btn" onclick="changeQty(-1)">-</button>
+                            <span id="modalQty">1</span>
+                            <button class="qty-btn" onclick="changeQty(1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <p id="modalTotal" class="modal-total"></p>
+                    <button id="modalOrderBtn" class="btn-order">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923063159899" class="float-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-spray-can"></i>
+                        <span>Aura<span>PK</span></span>
+                    </a>
+                    <p>Your destination for premium luxury fragrances.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#collections">Collections</a></li>
+                        <li><a href="mens.html">Men's</a></li>
+                        <li><a href="womens.html">Women's</a></li>
+                        <li><a href="unisex.html">Unisex</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and new arrivals.</p>
+                    <form class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AuraPK. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                
+                document.querySelectorAll('.product-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | AuraPK</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --gold: #d4af37;
+            --accent: #e94560;
+            --light: #f8f8f8;
+            --dark: #0f0f0f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+        }
+
+        /* Header */
+        .checkout-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 1.5rem 0;
+        }
+
+        .checkout-header .logo {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .checkout-header .logo i {
+            color: var(--gold);
+            margin-right: 0.5rem;
+        }
+
+        /* Progress Steps */
+        .progress-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem 0;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ccc;
+        }
+
+        .step.active {
+            color: var(--gold);
+        }
+
+        .step.completed {
+            color: #28a745;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .step.active .step-number {
+            background: var(--gold);
+            color: white;
+        }
+
+        .step.completed .step-number {
+            background: #28a745;
+            color: white;
+        }
+
+        .step-line {
+            width: 80px;
+            height: 2px;
+            background: #eee;
+        }
+
+        /* Main Content */
+        .checkout-container {
+            padding: 3rem 0;
+        }
+
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Form Card */
+        .form-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .form-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-card h3 i {
+            color: var(--gold);
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-control:read-only {
+            background: #f5f5f5;
+            color: #666;
+        }
+
+        .form-select {
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+        }
+
+        .form-select:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .input-group-text {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+        }
+
+        /* Order Summary Card */
+        .summary-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 100px;
+        }
+
+        .summary-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .summary-card h3 i {
+            color: var(--gold);
+        }
+
+        .product-summary {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .product-details h5 {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .product-details .price {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            color: #666;
+        }
+
+        .summary-row.total {
+            border-top: 2px solid var(--primary);
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        /* Confirm Button */
+        .btn-confirm {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-confirm:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Security Badges */
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem 0;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .security-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .summary-card {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .progress-steps {
+                gap: 1rem;
+            }
+            
+            .step-line {
+                width: 30px;
+            }
+            
+            .step span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="checkout-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-spray-can"></i>
+                Aura<span style="color: var(--gold);">PK</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Progress Steps -->
+    <div class="progress-steps" id="progressSteps">
+        <div class="step completed" id="stepCart">
+            <div class="step-number"><i class="fas fa-check"></i></div>
+            <span>Cart</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step active" id="stepCheckout">
+            <div class="step-number">2</div>
+            <span>Checkout</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" id="stepConfirm">
+            <div class="step-number">3</div>
+            <span>Confirmation</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="checkout-container">
+        <div class="container">
+            <div class="checkout-grid">
+                <!-- Billing Form -->
+                <div class="form-card">
+                    <h3><i class="fas fa-user"></i> Billing Details</h3>
+                    <form id="checkoutForm">
+                        <!-- Product Info (Hidden) -->
+                        <input type="hidden" id="productName" name="productName">
+                        <input type="hidden" id="productPrice" name="productPrice">
+                        <input type="hidden" id="productImage" name="productImage">
+
+                        <div class="row g-3">
+                            <!-- First Name -->
+                            <div class="col-md-6">
+                                <label class="form-label">First Name *</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" required placeholder="Enter first name">
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="col-md-6">
+                                <label class="form-label">Last Name *</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" required placeholder="Enter last name">
+                            </div>
+
+                            <!-- Country (Read-only) -->
+                            <div class="col-md-6">
+                                <label class="form-label">Country *</label>
+                                <input type="text" class="form-control" id="country" name="country" value="Pakistan" readonly>
+                            </div>
+
+                            <!-- City -->
+                            <div class="col-md-6">
+                                <label class="form-label">City *</label>
+                                <input type="text" class="form-control" id="city" name="city" required placeholder="Enter your city">
+                            </div>
+
+                            <!-- Street Address -->
+                            <div class="col-12">
+                                <label class="form-label">Street Address *</label>
+                                <input type="text" class="form-control" id="address" name="address" required placeholder="House No., Street Name, Area">
+                            </div>
+
+                            <!-- Apartment/Sector (Optional) -->
+                            <div class="col-12">
+                                <label class="form-label">Apartment / Sector / Block (Optional)</label>
+                                <input type="text" class="form-control" id="apartment" name="apartment" placeholder="Flat No., Sector, Block">
+                            </div>
+
+                            <!-- Phone Number -->
+                            <div class="col-md-6">
+                                <label class="form-label">Phone Number *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">+92</span>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required placeholder="3XX XXXXXXX" pattern="[0-9]{10}">
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+
+                            <!-- Order Notes (Optional) -->
+                            <div class="col-12">
+                                <label class="form-label">Order Notes (Optional)</label>
+                                <textarea class="form-control" id="notes" name="notes" rows="3" placeholder="Any special instructions for your order..."></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="summary-card">
+                    <h3><i class="fas fa-shopping-bag"></i> Order Summary</h3>
+                    
+                    <!-- Product Display -->
+                    <div class="product-summary">
+                        <img src="" alt="Product" class="product-image" id="summaryImage">
+                        <div class="product-details">
+                            <h5 id="summaryName">Product Name</h5>
+                            <p class="price" id="summaryPrice">Rs 0</p>
+                        </div>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">Rs 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span>Free</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Delivery Time</span>
+                        <span>3-5 Business Days</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="total">Rs 0</span>
+                    </div>
+
+                    <button class="btn-confirm" onclick="confirmOrder()">
+                        <i class="fab fa-whatsapp"></i> Confirm Order on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Badges -->
+    <div class="security-badges">
+        <span><i class="fas fa-shield-alt"></i> Secure Checkout</span>
+        <span><i class="fas fa-lock"></i> SSL Encrypted</span>
+        <span><i class="fas fa-truck"></i> Cash on Delivery Available</span>
+    </div>
+
+    <script>
+        // Get product info from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productName = urlParams.get('product') || 'Royal Oud';
+        const productPrice = parseInt(urlParams.get('price')) || 42000;
+        const productImage = urlParams.get('image') || 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400';
+
+        // Set product info in form
+        document.getElementById('productName').value = productName;
+        document.getElementById('productPrice').value = productPrice;
+        document.getElementById('productImage').value = productImage;
+
+        // Display in summary
+        document.getElementById('summaryName').textContent = productName;
+        document.getElementById('summaryPrice').textContent = 'Rs ' + productPrice.toLocaleString();
+        document.getElementById('summaryImage').src = productImage;
+        document.getElementById('subtotal').textContent = 'Rs ' + productPrice.toLocaleString();
+        document.getElementById('total').textContent = 'Rs ' + productPrice.toLocaleString();
+
+        // Confirm Order
+        function confirmOrder() {
+            const form = document.getElementById('checkoutForm');
+            
+            // Validate form
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Update progress steps to show confirmation
+            document.getElementById('stepCheckout').classList.remove('active');
+            document.getElementById('stepCheckout').classList.add('completed');
+            document.getElementById('stepCheckout').innerHTML = '<div class="step-number"><i class="fas fa-check"></i></div><span>Checkout</span>';
+            
+            document.getElementById('stepConfirm').classList.add('active');
+            document.getElementById('stepConfirm').innerHTML = '<div class="step-number"><i class="fas fa-check"></i></div><span>Confirmation</span>';
+
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const fullName = firstName + ' ' + lastName;
+            const city = document.getElementById('city').value;
+            const address = document.getElementById('address').value;
+            const apartment = document.getElementById('apartment').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const notes = document.getElementById('notes').value;
+
+            // Format full address
+            let fullAddress = address;
+            if (apartment) {
+                fullAddress += ', ' + apartment;
+            }
+
+            // Create WhatsApp message
+            const message = `🔥 NEW PERFUME ORDER 🔥
+----------------------------------
+🧴 Product: ${productName}
+💰 Price: Rs ${productPrice.toLocaleString()}
+----------------------------------
+👤 Customer: ${fullName}
+📍 City: ${city}
+🏠 Address: ${fullAddress}
+📱 WhatsApp: +92${phone}
+📧 Email: ${email}
+${notes ? '📝 Note: ' + notes : ''}
+----------------------------------
+✅ Order Confirmed`;
+
+            // Redirect to WhatsApp
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappNumber = '923063159899';
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
